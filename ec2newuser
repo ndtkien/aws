@@ -16,3 +16,26 @@ PasswordAuthentication yes
 PermitRootLogin yes
 
 sudo service ssh restart
+
+#cap quyen
+  r (read) = 4
+  w (write) = 2
+  x (execute) = 1
+  no permissions = 0 (+ vào, 3 số 3 đối tượng, chủ sở hữu-nhóm-khác)
+  https://freetuts.net/lenh-chmod-trong-linux-3650.html
+  - xoa quyen
+  + them
+  = thay
+  ugoa (so huu, group, ng khac, tat ca)
+  sudo chmod g=r filename thay group r file
+#new group:
+sudo groupadd mdpaperdev
+#view all member in group:
+sudo apt install members
+members groupname
+#add member to group
+sudo usermod -a -G mdpaperdev-group kienndt-user (-a append, ko xoas group cu, G de add group)
+#view group folder 
+ls -ld folder (tham so 1: user, tham so 2: group cua folder)
+#change group folder
+sudo chgrp -R mdpaperdev-group mdpaper/
