@@ -1,0 +1,18 @@
+#login with user keypair pem putty
+
+sudo adduser kienndt
+#enter het, dat pass
+
+#cap quyen sudo cho user
+sudo vi /etc/sudoer
+root    ALL=(ALL:ALL) ALL
+kienndt ALL=(ALL:ALL) ALL
+
+#ssh voi password
+sudo vi /etc/ssh/sshd_config
+#For a valid user to login with no key
+PasswordAuthentication yes
+#Also want root to login also with no key
+PermitRootLogin yes
+
+sudo service ssh restart
